@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> MEDA VAMSHI KRISHNA | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* Attractive Animations */
+    @keyframes slideInFromLeft {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px) rotate(-5deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+      }
+    }
+
+    @keyframes slideInFromRight {
+      0% {
+        opacity: 0;
+        transform: translateX(100px) rotate(5deg);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) rotate(0deg);
+      }
+    }
+
+    @keyframes bounceIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.3) translateY(-100px);
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.05) translateY(10px);
+      }
+      70% {
+        transform: scale(0.9) translateY(-5px);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    @keyframes glowPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(224, 122, 31, 0.3);
+      }
+      50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 40px rgba(224, 122, 31, 0.6);
+      }
+    }
+
+    @keyframes floatAndGlow {
+      0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      }
+      25% {
+        transform: translateY(-15px) rotate(2deg);
+        box-shadow: 0 20px 40px rgba(224, 122, 31, 0.3);
+      }
+      50% {
+        transform: translateY(-25px) rotate(0deg);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+      }
+      75% {
+        transform: translateY(-15px) rotate(-2deg);
+        box-shadow: 0 20px 40px rgba(224, 122, 31, 0.3);
+      }
+    }
+
+    @keyframes typewriter {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes fadeInScale {
+      0% {
+        opacity: 0;
+        transform: scale(0.5) rotate(180deg);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    @keyframes slideUpWithBounce {
+      0% {
+        opacity: 0;
+        transform: translateY(50px) scale(0.8);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-10px) scale(1.05);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f9f6ef;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 4rem;
+      background: #f9f6ef;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      color: #444;
+      font-weight: 500;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #e07a1f;
+    }
+
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 4rem 8%;
+      min-height: 100vh;
+      flex-wrap: wrap;
+    }
+
+    section img {
+      max-width: 250px;
+      border-radius: 10px;
+      margin-top: 2rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    h1 span {
+      color: #e07a1f;
+      font-style: italic;
+    }
+
+    p {
+      max-width: 700px;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.8rem 1.5rem;
+      background: #e07a1f;
+      color: white;
+      border-radius: 5px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .btn:hover {
+      background: #c86515;
+    }
+
+    /* Links in Certifications */
+    .cert a {
+      color: #e07a1f;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .cert a:hover {
+      color: #c86515;
+      text-decoration: underline;
+    }
+
+    /* Contact links */
+    .contact a {
+      color: #e07a1f;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+
+    .contact a:hover {
+      color: #c86515;
+      text-decoration: underline;
+    }
+
+    /* Attractive Animation Classes */
+    .animate-slide-in-left {
+      animation: slideInFromLeft 1.2s ease-out;
+    }
+
+    .animate-slide-in-right {
+      animation: slideInFromRight 1.2s ease-out;
+    }
+
+    .animate-bounce-in {
+      animation: bounceIn 1.5s ease-out;
+    }
+
+    .animate-glow-pulse {
+      animation: glowPulse 2s ease-in-out infinite;
+    }
+
+    .animate-float-glow {
+      animation: floatAndGlow 4s ease-in-out infinite;
+    }
+
+    .animate-fade-scale {
+      animation: fadeInScale 1.3s ease-out;
+    }
+
+    .animate-slide-bounce {
+      animation: slideUpWithBounce 1.2s ease-out;
+    }
+
+    /* Typewriter effect for text */
+    .typewriter {
+      overflow: hidden;
+      white-space: nowrap;
+      animation: typewriter 3s steps(40, end);
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #e07a1f; }
+    }
+
+    /* Attractive Hover Effects */
+    .btn:hover {
+      background: #c86515;
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(224, 122, 31, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    section img:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 20px 50px rgba(224, 122, 31, 0.3);
+      transition: all 0.4s ease;
+    }
+
+    nav a:hover {
+      color: #e07a1f;
+      transform: translateY(-3px) scale(1.1);
+      text-shadow: 0 0 10px rgba(224, 122, 31, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    /* Glowing effects for links */
+    .cert a:hover, .contact a:hover {
+      color: #c86515;
+      text-decoration: underline;
+      text-shadow: 0 0 8px rgba(224, 122, 31, 0.6);
+      transform: translateX(5px);
+      transition: all 0.3s ease;
+    }
+
+    /* Scroll-triggered animations */
+    .animate-on-scroll {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 0.8s ease-out;
+    }
+
+    .animate-on-scroll.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      header {
+        padding: 1rem 2rem;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      nav a {
+        margin-left: 1rem;
+        margin-right: 1rem;
+      }
+      
+      section {
+        padding: 2rem 4%;
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      h1 {
+        font-size: 2.5rem;
+      }
+      
+      section img {
+        max-width: 200px;
+        margin-top: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h2>MEDA VAMSHI KRISHNA</h2>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#education">Education</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section id="hero">
+    <div class="animate-slide-in-left">
+      <h1>Hi, I'm <span class="typewriter">Vamshi</span>.</h1>
+      <p class="animate-bounce-in" style="animation-delay: 0.5s;">Curious learner who enjoys solving problems and turning ideas into practical results.</p>
+      <a href="#contact" class="btn animate-glow-pulse" style="animation-delay: 1s;">Let's Connect</a>
+    </div>
+    <img src="photo.jpg" alt="Meda Vamshi Krishna - Profile Photo" class="animate-slide-in-right">
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="animate-fade-scale">
+      <h1>About Me</h1>
+      <p>To leverage my technical skills and problem-solving abilities in a software engineering role where I can contribute to innovative projects, collaborate with talented teams, and continue to learn and grow professionally.</p>
+    </div>
+  </section>
+
+  <!-- Education -->
+  <section id="education">
+    <div class="animate-slide-bounce">
+      <h1>Education</h1>
+      <p><b>B.Tech in CSE</b> – St. Johns College (2022–2026)</p>
+      <p><b>Intermediate in MPC</b> – Narayana Junior College (2020–2022)</p>
+      <p><b>SSC</b> – Narayana Schools (2019–2020)</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="animate-bounce-in">
+      <h1>Skills</h1>
+      <p>Programming: C, Python, SQL</p>
+      <p>Frameworks: Pandas, NumPy, Matplotlib, Pillow</p>
+      <p>Tools: Git, GitHub, CLI, VS Code</p>
+      <p>Other: DBMS, OS, Communication, Teamwork</p>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="animate-fade-scale">
+      <h1>Projects</h1>
+      <p>• Simple Python Chatbot</p>
+      <p>• Image Resizer & Format Converter</p>
+      <p>• Music Recommender System</p>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section id="certifications">
+    <div class="cert animate-slide-bounce">
+      <h1>Certifications</h1>
+      <p>• <a href="https://certificates.skilldzire.com/generate_certificate.php?id=22565" target="_blank">Data Science (SkillDzire)</a></p>
+      <p>• <a href="https://certificate.iirs.gov.in/checkstatus.php?uid=bc3d35018f859076635b8f4dfe7b27bb&enm=20241522607933" target="_blank">Geo-computation & Geo-web Services</a></p>
+      <p>• <a href="https://certificate.iirs.gov.in/checkstatus.php?uid=bc3d35018f859076635b8f4dfe7b27bb&enm=20241522607933" target="_blank">Remote Sensing & Digital Image Analysis</a></p>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="contact animate-bounce-in">
+      <h1>Contact</h1>
+      <p>Email: <a href="mailto:medavamshikrishna888@gmail.com">medavamshikrishna888@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/meda-vamshi-krishna-0b570224b/" target="_blank">linkedin.com/in/meda-vamshi-krishna-0b570224b/</a></p>
+      <p>GitHub: <a href="https://github.com/Vamshi-888" target="_blank">github.com/Vamshi-888</a></p>
+      <p>Phone: <a href="tel:+916302797448">+91 6302797448</a></p>
+    </div>
+  </section>
+
+  <script>
+    // Scroll-triggered animations
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, observerOptions);
+
+    // Observe all sections for scroll animations
+    document.querySelectorAll('section > div').forEach(section => {
+      section.classList.add('animate-on-scroll');
+      observer.observe(section);
+    });
+
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
