@@ -136,6 +136,18 @@
       font-size: 1.5rem;
     }
 
+    .logo-link {
+      color: inherit;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .logo-link:hover {
+      color: #e07a1f;
+      transform: scale(1.05);
+    }
+
     nav a {
       margin-left: 2rem;
       color: #444;
@@ -320,6 +332,18 @@
         margin-bottom: 0.5rem;
       }
       
+      .logo-link {
+        display: block;
+        padding: 0.5rem;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+      
+      .logo-link:hover {
+        background: rgba(224, 122, 31, 0.1);
+        transform: scale(1.02);
+      }
+      
       nav {
         display: flex;
         flex-wrap: wrap;
@@ -484,7 +508,7 @@
 <body>
   <!-- Header -->
   <header>
-    <h2>MEDA VAMSHI KRISHNA</h2>
+    <h2><a href="#hero" class="logo-link">MEDA VAMSHI KRISHNA</a></h2>
     <nav>
       <a href="#about">About</a>
       <a href="#education">Education</a>
@@ -586,8 +610,8 @@
       observer.observe(section);
     });
 
-    // Smooth scrolling for navigation links
-    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+    // Smooth scrolling for navigation links and logo
+    document.querySelectorAll('nav a[href^="#"], .logo-link').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
         
